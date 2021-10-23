@@ -1,0 +1,24 @@
+<div class="falcone-result-container">
+
+
+        <div class="falcone-result">
+            <mat-card>
+                <ng-container *ngIf="loadedResult">
+                    <div class="falcone-result-content"> {{resultContent}} </div>
+                    <div class="falcon-icon-success" *ngIf="resultStatus"> </div>
+                    <div class="falcon-icon-failure" *ngIf="!resultStatus"> </div>
+                    <div class="falcone-btn-container" (click)="goBack()">
+                     <div class="falcone-button-primary"> {{btnText}} </div>
+                     <div class="falcone-button-shadow"></div>
+                   </div>
+                </ng-container>
+
+               <div class="loader-container" *ngIf="!loadedResult">
+                    <div class="loader">
+                    
+                    </div>
+                </div>
+            </mat-card>
+
+         </div>
+</div>

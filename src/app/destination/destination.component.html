@@ -1,0 +1,17 @@
+<div class="destination-container">
+    <mat-accordion>
+      <mat-expansion-panel [expanded]="isExpanded">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+           {{choosenPlanet? choosenPlanet.name : destinationLabel}}
+          </mat-panel-title>
+          <mat-panel-description class="distance-summary">
+            <span *ngIf="choosenPlanet"> Distance : </span>{{ choosenPlanet? choosenPlanet.distance : ''}}   <span *ngIf="choosenPlanet"> megamiles </span>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <falcone-traveldetails [identifier]="identifier" [vehicles]="vehicles" [planets]="destinations" (planetEmit)="getPlanetFromChild($event)" (vehicleEmit)="getVehicleFromChild($event)"> </falcone-traveldetails>
+        <div class="planet-background" *ngIf="showImg" [ngStyle]="{'backgroundImage': imgUrl , 'backgroundSize': 'contain'}">
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>

@@ -1,0 +1,55 @@
+.main-content{
+    height:100%;
+    width:100%;
+}
+
+.form-container{
+    margin: 100px auto;
+    padding: 16px;
+}
+
+.sub-heading{
+    text-align: center;
+    font-family: 'Exo 2', sans-serif; 
+}
+
+.destination-container{
+    margin: 10px 5px;
+    flex:auto;
+}
+
+.falcone-cards-container{
+    display:flex;
+}
+
+.card-row{
+    flex: 1;
+    display: flex;
+}
+
+.time-taken-label{
+    text-align: center;
+}
+
+
+.final-summary-container{
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+    /* Target devices narrower than 768px. */
+    .form-container{
+        margin: 140px auto;
+        padding: 16px;
+    }
+    .falcone-cards-container{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px){
+.card-row{
+    flex-direction: column;
+}
+}

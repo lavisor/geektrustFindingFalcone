@@ -1,0 +1,36 @@
+<div class="main-content">
+  <div class="form-container">
+    <h2 class="sub-heading">Select planets you want to search in:</h2>
+    <div class="falcone-cards-container">
+      <div class="card-row">
+        <div class="destination-container">
+          <falcone-destination *ngIf="vehicles && planets" [identifier]="destination1" [destinations]="planets" [vehicles]="vehicles" (currentPlanet)="updatePlanets($event, 0)" (currentVehicle)="updateVehicles($event,0)"></falcone-destination>
+          <falcone-card-loader *ngIf="!(vehicles && planets)" [hideExpantion]="false"></falcone-card-loader>
+        </div>
+        <div class="destination-container">
+          <falcone-destination *ngIf="vehicles && planets" [identifier]="destination2" [destinations]="planets" [vehicles]="vehicles" (currentPlanet)="updatePlanets($event, 1)" (currentVehicle)="updateVehicles($event,1)"></falcone-destination>
+          <falcone-card-loader *ngIf="!(vehicles && planets)" [hideExpantion]="false"></falcone-card-loader>
+        </div>
+      </div>
+      <div class="card-row">
+        <div class="destination-container">
+          <falcone-destination *ngIf="vehicles && planets" [identifier]="destination3" [destinations]="planets" [vehicles]="vehicles" (currentPlanet)="updatePlanets($event, 2)" (currentVehicle)="updateVehicles($event,2)"></falcone-destination>
+          <falcone-card-loader *ngIf="!(vehicles && planets)" [hideExpantion]="false"></falcone-card-loader>
+        </div>
+        <div class="destination-container">
+          <falcone-destination *ngIf="vehicles && planets" [identifier]="destination4" [destinations]="planets" [vehicles]="vehicles" (currentPlanet)="updatePlanets($event, 3)" (currentVehicle)="updateVehicles($event,3)"></falcone-destination>
+          <falcone-card-loader *ngIf="!(vehicles && planets)" [hideExpantion]="false"></falcone-card-loader>
+        </div>
+      </div>
+    </div>
+    <div class="find-falcone-submit">
+      <div class="final-summary-container">
+        <div class="time-taken-label"> <h2 class="sub-heading">Time Taken : {{totalTimeTaken}} </h2> </div>
+        <div [ngClass]="{'falcone-primary-btn-disabled' : !isFindFalconEnabled }" class="falcone-btn-container" (click)="findFalcone()">
+          <div class="falcone-button-primary"> Find Falcone!</div>
+          <div class="falcone-button-shadow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

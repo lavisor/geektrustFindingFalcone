@@ -1,0 +1,44 @@
+.header{
+    padding: 10px 10px;
+    font-family: 'Exo 2';
+
+    .heading-contianer{
+        text-align: center;
+        
+        h1 {
+            margin: 8px 0px;
+        }
+    }
+
+    .falcone-menu-container{
+        right: 25px;
+        top: 15px;
+        display: flex;
+        font-size: 15px;
+
+        .falcone-menu {
+            padding: 10px 15px;
+            cursor:pointer;
+        }
+    }
+
+    .desktop-header{
+        position: absolute;
+    }
+    .mobile-header{
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+
+        .mobile-header{
+            display: flex;
+            position:unset;
+            flex-direction: row-reverse;
+        }
+        .desktop-header{
+            display: none;
+        }
+    }
+    
+}

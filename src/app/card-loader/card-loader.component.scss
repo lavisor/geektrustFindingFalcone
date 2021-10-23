@@ -1,0 +1,22 @@
+.loader-container {
+    width:100%;
+    box-sizing: border-box;
+}
+
+.loader {
+  margin: 90px auto;
+  border: 5px solid #DFDFDF;
+  border-radius: 50%;
+  border-top: 5px solid #191726;
+  width: 40px;
+  height: 40px;
+  animation: spinner 4s linear infinite;
+  box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+-webkit-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+-moz-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+}
+  
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,54 @@
+.falcone-result{
+    max-width: 500px;
+    margin: 0px auto;
+    text-align: center;
+    padding-top: 140px;
+
+    .falcone-btn-container{
+        margin: 0 auto;
+    }
+    .falcone-result-content{
+        line-height:27px;
+        font-size: 20px;
+        margin: 25px 20px;
+    }
+
+    .falcon-icon-success{
+        background:url(../../assets/icons/extra/success.png);
+        background-size:contain;
+        height:50px;
+        width:50px;
+        margin: 20px auto;
+
+    }
+    .falcon-icon-failure{
+        background:url(../../assets/icons/extra/cross.png);
+        background-size:contain;
+        height:50px;
+        width:50px;
+        margin: 20px auto;
+    }
+}
+
+.loader-container {
+    width:100%;
+    box-sizing: border-box;
+}
+
+.loader {
+  margin: 90px auto;
+  border: 5px solid #DFDFDF;
+  border-radius: 50%;
+  border-top: 5px solid #191726;
+  width: 40px;
+  height: 40px;
+  animation: spinner 4s linear infinite;
+  box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+-webkit-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+-moz-box-shadow: 0px 0px 48px -3px rgba(0,0,0,0.82);
+}
+  
+@keyframes spinner {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,28 @@
+<div class="falcon-destination-card">
+    <form class="autocomplete-container">
+        <div class="falcone-autocomplete">
+            <mat-form-field>
+                <input type="text" placeholder="Planet" matInput [matAutocomplete]="planetAuto" [formControl]="planetControl" [(ngModel)]="currentPlanet"/>
+                <mat-autocomplete #planetAuto="matAutocomplete" [displayWith]="getPlanetName" (optionSelected)="onPlanetChanged($event)" >
+                    <ng-container *ngFor="let planet of filteredPlanet | async">
+                    <mat-option *ngIf="planet.isAvailable" [value]="planet">
+                      <img class="inline-planets-image" src="{{getImage(planet.name)}}"/>  {{planet.name}}
+                    </mat-option>
+                    </ng-container>
+                </mat-autocomplete>
+            </mat-form-field>
+        </div>
+
+        <mat-radio-group
+            aria-labelledby="vehicle-label"
+            class="example-radio-group"
+            [(ngModel)]="currentVehicle" name="{{identifier}}">
+            <ng-container *ngFor="let vehicle of vehicles">
+                <mat-radio-button class="example-radio-button" [value]="vehicle" [disabled]="vehicle.total_no === 0 || (currentPlanet? vehicle.max_distance < currentPlanet.distance: false)" (change)="onVehicleChanged($event)"> 
+                    {{vehicle.name}} <div class="vechile-count">{{vehicle.total_no}}</div>
+                </mat-radio-button>
+            </ng-container>
+        </mat-radio-group>
+    </form>
+</div>
+
